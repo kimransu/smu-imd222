@@ -9,7 +9,6 @@ class Circle {
   render() {
     push();
     translate(this.bodies.position.x, this.bodies.position.y);
-    rotate(this.bodies.angle);
     fill(this.c);
     circle(0, 0, this.d);
     pop();

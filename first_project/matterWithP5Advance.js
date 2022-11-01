@@ -27,7 +27,7 @@ function draw() {
   pingPongBall.render();
   ground.render();
 }
-
+// 마우스이동에 따라 ground가 이동 할 수 있도록
 function mouseMove() {
   ground(mouseX, 500, 150, 15, "#C0AAA9", { isStatic: true });
 }

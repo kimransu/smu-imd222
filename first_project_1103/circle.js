@@ -3,8 +3,6 @@
 
 class Circle {
   constructor(x, y, d, c, opt) {
-    this.x = x;
-    this.y = y;
     this.d = d;
     this.c = c;
     this.bodies = Bodies.circle(x, y, this.d * 0.5, opt);
@@ -15,11 +13,9 @@ class Circle {
     translate(this.bodies.position.x, this.bodies.position.y);
     fill(this.c);
     circle(0, 0, this.d);
-    // let positionY = this.bodies.position.y;
     pop();
   }
-  // Y축 좌표값 가져오기
-  getPositionY() {
+  getPosition() {
     return this.bodies.position.y;
   }
 }

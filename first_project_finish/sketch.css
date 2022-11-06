@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#sketch {
+  margin-inline: auto;
+  width: 80vw;
+  height: 80vh;
+}
+#addBall {
+  font-size: 1.3em;
+  /* background-color: #ccc; */
+  width: 80vw;
+  height: auto;
+  text-align: right;
+  position: absolute;
+  top: 0.3vh;
+  /* padding: 8px; */
+}

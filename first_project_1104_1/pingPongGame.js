@@ -14,13 +14,13 @@ function setup() {
   createCanvas(800, 600);
   engine = Engine.create();
   pingPongBall = new Circle(400, -15, 30, "blue", {
-    frictionAir: 0.001,
-    friction: 0.5,
+    frictionAir: 0,
+    friction: 0,
     frictionSatatic: 1,
+    inertia: Infinity,
     restitution: 1,
   });
-  bar = new Rect(400, 500, 100, 15, "pink", { isStatic: true });
-  Composite.add(engine.world, [bar.bodies, pingPongBall.bodies]);
+  Composite.add(engine.world, pingPongBall.bodies);
 }
 
 function draw() {
@@ -28,16 +28,36 @@ function draw() {
   Engine.update(engine);
   noStroke();
   pingPongBall.render();
-  bar.render();
   console.log(pingPongBall);
+
   // 핑퐁볼이 바닥으로 떨어지면 다시 위에서 시작하게
   if (pingPongBall.getPositionY() >= 600 + 15) {
     pingPongBall = new Circle(400, -15, 30, "blue", {
-      frictionAir: 0.001,
-      friction: 0.5,
+      frictionAir: 0,
+      friction: 0,
       frictionSatatic: 1,
+      inertia: Infinity,
       restitution: 1,
     });
-    Composite.add(engine.world, [bar.bodies, pingPongBall.bodies]);
+    Composite.add(engine.world, pingPongBall.bodies);
   }
+  // 마우스 오버시 X축 이동하는 바 생성
 }
+function mouseOver() {
+  bar = new Rect(mouseX, 500, 100, 15, "pink", { isStatic: false });
+  Composite.add(engine.world, bar.bodies);
+  console.log(bar);
+  bar.render();
+}
+
+// function mouseOver() {
+//   if (mouseOver() === ture) {
+//     bar = new Rect(mouseX, 500, 100, 15, "pink", { isStatic: false });
+//   } else if (mouseOver() === false) {
+//     bar = new Rect(400, 500, 100, 15, "pink", { isStatic: true });
+//   }
+// }
+
+// function mouseMoved() {
+//   bar = new Rect(mouseX, 500, 100, 15, "pink", { isStatic: false });
+// }

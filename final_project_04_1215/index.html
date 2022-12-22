@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+      }
+      body {
+        background-color: grey;
+      }
+      #p5Canvas {
+        margin-inline: auto;
+        /* vh = 내 창의 높이 view port height */
+        height: 100vh;
+        /* 무조건 1:1 비율로 유지하게하는것 가로/세로 가로값이 없어도 알아서 세로랑 맞춰줌 */
+        aspect-ratio: 1/1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="p5Canvas"></div>
+    <script src="./sketch.js"></script>
+  </body>
+</html>

@@ -18,7 +18,7 @@ function draw() {
   let b = map(noise(0, 1), 0, 1, 0, 255);
   stroke(r, g, b);
   noFill();
-  d = map(mouseX, 0, 100, 0, 90);
+  d = map(mouseX, 0, width, 0, 90);
   for (idx = 0; idx < 360; idx += sym) {
     push();
     translate(width / 2, height / 2);

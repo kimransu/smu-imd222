@@ -17,7 +17,7 @@ function draw() {
   let g = map(mouseY, 0, height, 0, 255);
   let b = map(noise(0, 1), 0, 1, 0, 255);
   stroke(r, g, b);
-  d = map(mouseX, 0, 100, 0, 90);
+  d = map(mouseX, 0, width, 0, 90);
   for (idx = 0; idx < 360; idx += sym) {
     push();
     translate(width / 2, height / 2);
@@ -28,7 +28,7 @@ function draw() {
 }
 
 function branch(br) {
-  strokeWeight(br * 0.02);
+  strokeWeight(br * 0.01);
   line(0, 0, 0, -br);
   translate(0, -br);
   if (br > 10) {

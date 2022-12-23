@@ -1,6 +1,6 @@
 let theta;
-//첫 나무가지 길이 180px
-let branchHeight = 180;
+//첫 나무가지 길이 초기화
+let branchHeight = 0;
 
 function setup() {
   let boundingRects = document
@@ -8,6 +8,7 @@ function setup() {
     .getBoundingClientRect();
   let canvas = createCanvas(boundingRects.width, boundingRects.height);
   canvas.parent("p5Canvas");
+  branchHeight = boundingRects.height * 0.3;
 }
 
 function draw() {
